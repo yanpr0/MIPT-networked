@@ -17,7 +17,6 @@ static int get_dgram_socket(addrinfo *addr, bool should_bind, addrinfo *res_addr
     if (ptr->ai_family != AF_INET || ptr->ai_socktype != SOCK_DGRAM || ptr->ai_protocol != IPPROTO_UDP)
       continue;
     int sfd = socket(ptr->ai_family, ptr->ai_socktype, ptr->ai_protocol);
-    printf("%d: %d %d %d\n", sfd, ptr->ai_family, ptr->ai_socktype, ptr->ai_protocol);
     if (sfd == -1)
       continue;
 
