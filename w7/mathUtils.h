@@ -22,3 +22,6 @@ inline float sign(float in)
 {
   return in > 0.f ? 1.f : in < 0.f ? -1.f : 0.f;
 }
+
+constexpr float PI = 3.141592654f;
+
