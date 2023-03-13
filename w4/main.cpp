@@ -142,7 +142,7 @@ int main(int argc, const char **argv)
 
 
     BeginDrawing();
-      ClearBackground(GREY);
+      ClearBackground(GRAY);
       BeginMode2D(camera);
         for (const Entity &e : entities)
         {
