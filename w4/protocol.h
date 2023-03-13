@@ -1,6 +1,6 @@
 #pragma once
-#include <enet/enet.h>
 #include <cstdint>
+#include <enet/enet.h>
 #include "entity.h"
 
 enum MessageType : uint8_t
