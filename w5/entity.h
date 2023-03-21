@@ -9,8 +9,10 @@ struct Entity
   float y = 0.f;
   float speed = 0.f;
   float ori = 0.f;
+
   float thr = 0.f;
   float steer = 0.f;
+
   uint16_t eid = invalid_entity;
 };
 
