@@ -20,7 +20,6 @@ void on_new_entity_packet(ENetPacket *packet)
     if (e.eid == newEntity.eid)
       return; // don't need to do anything, we already have entity
   entities.push_back(newEntity);
-  printf("new entity\n");
 }
 
 void on_set_controlled_entity(ENetPacket *packet)
@@ -68,9 +67,9 @@ int main(int argc, const char **argv)
     return 1;
   }
 
-  int width = 1920;
-  int height = 1080;
-  InitWindow(width, height, "w6 AI MIPT");
+  int width = 700;
+  int height = 700;
+  InitWindow(width, height, "w4 networked MIPT");
 
   const int scrWidth = GetMonitorWidth(0);
   const int scrHeight = GetMonitorHeight(0);
