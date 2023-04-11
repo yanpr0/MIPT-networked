@@ -147,6 +147,7 @@ int main(int argc, const char **argv)
     BeginDrawing();
       ClearBackground(GRAY);
       BeginMode2D(camera);
+        DrawRectangleLines(-16, -8, 32, 16, GetColor(0xff00ffff));
         for (const Entity &e : entities)
         {
           const Rectangle rect = {e.x, e.y, 3.f, 1.f};
