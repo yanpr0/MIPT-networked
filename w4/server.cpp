@@ -24,8 +24,8 @@ void on_join(ENetPacket *packet, ENetPeer *peer, ENetHost *host)
                    0x00440000 * (rand() % 5) +
                    0x00004400 * (rand() % 5) +
                    0x00000044 * (rand() % 5);
-  float x = (rand() % 4) * 2.f;
-  float y = (rand() % 4) * 2.f;
+  float x = (rand() % 4) * 200.f;
+  float y = (rand() % 4) * 200.f;
   Entity ent = {color, x, y, newEid};
   entities.push_back(ent);
 
@@ -106,7 +106,7 @@ int main(int argc, const char **argv)
         if (controlledMap[e.eid] != peer)
           send_snapshot(peer, e.eid, e.x, e.y);
       }
-    usleep(100000);
+    //usleep(400000);
   }
 
   enet_host_destroy(server);
