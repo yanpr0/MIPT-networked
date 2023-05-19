@@ -20,6 +20,7 @@ set(W4_SERVER_SOURCES
 
 
 include_directories("../3rdParty/enet/include")
+include_directories("../3rdParty/raylib/src")
 
 if(MSVC)
   # https://github.com/raysan5/raylib/issues/857
@@ -27,12 +28,15 @@ if(MSVC)
 endif()
 
 add_executable(w4 ${W4_SOURCES})
-target_link_libraries(w4 PUBLIC project_options project_warnings)
-target_link_libraries(w4 PUBLIC raylib enet)
+target_link_directories(w4 PUBLIC "../3rdParty/raylib/build/raylib")
+target_link_directories(w4 PUBLIC "../3rdParty/enet/build")
+#target_link_libraries(w4 PUBLIC project_options project_warnings)
+target_link_libraries(w4 PUBLIC pthread dl rt raylib enet)
 
 add_executable(w4_server ${W4_SERVER_SOURCES})
-target_link_libraries(w4_server PUBLIC project_options project_warnings)
-target_link_libraries(w4_server PUBLIC enet)
+target_link_directories(w4_server PUBLIC "../3rdParty/enet/build")
+#target_link_libraries(w4_server PUBLIC project_options project_warnings)
+target_link_libraries(w4_server PUBLIC m pthread dl rt enet)
 
 if(MSVC)
   target_link_libraries(w4 PUBLIC ws2_32.lib winmm.lib)
